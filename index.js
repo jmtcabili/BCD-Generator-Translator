@@ -34,7 +34,7 @@ function packedBCD(binaryMap, decimalInput) {
 }
 
 function densePackedBCD(binaryMap, decimalInput) {
-    packedBCD = decimalInput.map(digit => binaryMap[digit]).split('');
+   packedResult.split('');
     
 }
 
