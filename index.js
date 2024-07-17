@@ -33,3 +33,8 @@ function packedBCD(binaryMap, decimalInput) {
     return decimalInput.map(digit => binaryMap[digit]).join(' ');
 }
 
+function densePackedBCD(binaryMap, decimalInput) {
+    packedBCD = decimalInput.map(digit => binaryMap[digit]).split('');
+    
+}
+
