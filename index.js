@@ -34,7 +34,17 @@ function packedBCD(binaryMap, decimalInput) {
 }
 
 function densePackedBCD(binaryMap, decimalInput) {
-   packedResult.split('');
-    
+    arr = packedResult.split('');
+    int a = arr[0];
+    int b = arr[1];
+    int c = arr[2];
+    int d = arr[3];
+    int e = arr[4];
+    int f = arr[5];
+    int g = arr[6];
+    int h = arr[7];
+    int j = arr[8];
+    int k = arr[9];
+    int l = arr[10];
 }
 
