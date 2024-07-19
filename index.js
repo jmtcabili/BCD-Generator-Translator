@@ -46,5 +46,20 @@ function densePackedBCD(binaryMap, decimalInput) {
     int j = arr[8];
     int k = arr[9];
     int l = arr[10];
-}
+
+    if(a == 0){
+        if(e == 0){
+            if (i == 0){
+            }
+            else{
+                
+            }
+        }
+        else{
+            
+        }
+    }
+    else{
+
+    }
 
