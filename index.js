@@ -53,7 +53,7 @@ function densePackedBCD(binaryMap, decimalInput) {
     densePackedBCD.push(e);
     densePackedBCD.push(i);
 
-    if (a == 0){
+    if (a == 0){ 
         densePackedBCD.push(b);
         densePackedBCD.push(c);
         densePackedBCD.push(d);
@@ -65,28 +65,38 @@ function densePackedBCD(binaryMap, decimalInput) {
                 densePackedBCD.push(0);
                 densePackedBCD.push(j);
                 densePackedBCD.push(k);
+                //aei = 000
             }else{
-
+                densePackedBCD.push(1);
+                densePackedBCD.push(0);
+                densePackedBCD.push(0);
+                //aei = 001
             }
         }else{
             if (i == 0){
 
+                //aei = 010
             }else{
 
+                //aei = 011
             }
         }
     }else{
         if (e == 0){
             if (i == 0){
 
+                //aei = 100
             }else{
 
+                //aei = 101
             }
         }else{
             if (i == 0){
 
+                //aei = 110
             }else{
 
+                //aei = 111
             }
         }
     }
