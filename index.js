@@ -74,7 +74,10 @@ function densePackedBCD(binaryMap, decimalInput) {
             }
         }else{
             if (i == 0){
-
+                densePackedBCD.push(j);
+                densePackedBCD.push(k);
+                densePackedBCD.push(h);
+                densePackedBCD.push(1);
                 //aei = 010
             }else{
 
