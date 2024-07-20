@@ -49,10 +49,48 @@ function densePackedBCD(binaryMap, decimalInput) {
     int k = arr[10];
     int m = arr[11];
 
-    packedBCD.push(a);
-    packedBCD.push(e);
-    packedBCD.push(i);
+    densePackedBCD.push(a);
+    densePackedBCD.push(e);
+    densePackedBCD.push(i);
 
+    if (a == 0){
+        densePackedBCD.push(b);
+        densePackedBCD.push(c);
+        densePackedBCD.push(d);
+        if (e == 0){
+            densePackedBCD.push(f);
+            densePackedBCD.push(g);
+            densePackedBCD.push(h);
+            if (i == 0){
+                densePackedBCD.push(0);
+                densePackedBCD.push(j);
+                densePackedBCD.push(k);
+            }else{
+
+            }
+        }else{
+            if (i == 0){
+
+            }else{
+
+            }
+        }
+    }else{
+        if (e == 0){
+            if (i == 0){
+
+            }else{
+
+            }
+        }else{
+            if (i == 0){
+
+            }else{
+
+            }
+        }
+    }
+    densePackedBCD.push(m);
     return densePackedBCD.join(' ');
     
     
