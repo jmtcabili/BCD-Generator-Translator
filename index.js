@@ -53,7 +53,7 @@ function densePackedBCD(binaryMap, decimalInput) {
     packedBCD.push(e);
     packedBCD.push(i);
 
-    
+    return densePackedBCD.join(' ');
     
     
 }
