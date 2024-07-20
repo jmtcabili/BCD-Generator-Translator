@@ -34,7 +34,8 @@ function packedBCD(binaryMap, decimalInput) {
 }
 
 function densePackedBCD(binaryMap, decimalInput) {
-    arr = packedResult.split('');
+    let packedBCD = [];
+    const arr = packedResult.split('');
     int a = arr[0];
     int b = arr[1];
     int c = arr[2];
@@ -43,23 +44,17 @@ function densePackedBCD(binaryMap, decimalInput) {
     int f = arr[5];
     int g = arr[6];
     int h = arr[7];
-    int j = arr[8];
-    int k = arr[9];
-    int l = arr[10];
+    int i = arr[8];
+    int j = arr[9];
+    int k = arr[10];
+    int m = arr[11];
 
-    if(a == 0){
-        if(e == 0){
-            if (i == 0){
-            }
-            else{
-                
-            }
-        }
-        else{
-            
-        }
-    }
-    else{
+    packedBCD.push(a);
+    packedBCD.push(e);
+    packedBCD.push(i);
 
-    }
+    
+    
+    
+}
 
