@@ -94,18 +94,50 @@ function densePackedBCD(binaryMap, decimalInput) {
     }else{
         if (e == 0){
             if (i == 0){
-
+                densePackedBCD.push(j);
+                densePackedBCD.push(k);
+                densePackedBCD.push(d);
+                densePackedBCD.push(f);
+                densePackedBCD.push(g);
+                densePackedBCD.push(h);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
+                densePackedBCD.push(0);
                 //aei = 100
             }else{
-
+                densePackedBCD.push(f);
+                densePackedBCD.push(g);
+                densePackedBCD.push(d);
+                densePackedBCD.push(0);
+                densePackedBCD.push(1);
+                densePackedBCD.push(h);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
                 //aei = 101
             }
         }else{
             if (i == 0){
-
+                densePackedBCD.push(j);
+                densePackedBCD.push(k);
+                densePackedBCD.push(d);
+                densePackedBCD.push(0);
+                densePackedBCD.push(0);
+                densePackedBCD.push(h);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
                 //aei = 110
             }else{
-
+                densePackedBCD.push(0);
+                densePackedBCD.push(0);
+                densePackedBCD.push(d);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
+                densePackedBCD.push(h);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
                 //aei = 111
             }
         }
