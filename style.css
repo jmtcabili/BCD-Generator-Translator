@@ -11,9 +11,8 @@ body{
 header{
     background-color: #0D00A4;
     display: flex;
-    height: 20vh; 
-    max-height: 150px;
-    margin-bottom: 4vh; 
+    height: 10vh; 
+    
 }
 
 header .header-text{
@@ -43,9 +42,9 @@ header .header-text{
 }
 
 article{
-    margin-bottom: 8vh; 
-    height: 70vh;
-    max-height: 600px; 
+    margin-bottom: 3vh; 
+    height: 90vh; 
+    max-height: 1728px; 
 }
 
 .input{
@@ -60,8 +59,10 @@ article{
 
 .container{
     background-color: #E6E6E6;
+    min-height: 200px; 
     border-radius: 15px;
-    padding: 1% 2% 1% 2%
+    padding: 1% 2% 1% 2%;
+    margin-bottom: 60px; 
 }
 
 .label{
@@ -70,10 +71,9 @@ article{
 
 footer{
     background-color: #0D00A4;
-    height: 30vh; 
     display: flex; 
     justify-content: space-around; 
-
+    min-height: 300px; 
 }
 
 .footer-content{
@@ -83,8 +83,16 @@ footer{
     color: white; 
     justify-content: center;
     align-items: center;
-
+    min-width: 150px; 
 }
+
+@media only screen and (max-width: 325px){
+    footer{
+        display: flex; 
+        flex-direction: column; ;
+    }
+}
+
 li{
     margin-bottom: 2px; 
 }
