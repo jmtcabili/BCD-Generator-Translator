@@ -11,25 +11,19 @@
     
     <h2>BCD Generator</h2>
     
-    <form action="">
-        <div class = "input">
-            <label for="input">Decimal Input: </label>
-            <input type="text" placeholder=""><br>
-        </div>
-        <div class = "input">
-            <label for="unpacked">Unpacked BCD:</label>
-            <input type="text" placeholder="" readonly><br>
-        </div>
-        <div class = "input">
-            <label for="packed">Packed BCD: </label>
-            <input type="text" placeholder="" readonly><br>
-        </div>
-        <div class = "input">
-            <label for="densely-packed">Densely Packed BCD: </label>
-        <input type="text" placeholder="" readonly>
-        </div>
+    <div class = "input">
+        <label for="input">Decimal Input: </label>
+        <input type="number" id="decimalInput">
+        <br>
+    </div>
+    <div class = "output">
+        <p>Unpacked BCD: <span id="uBCD"></span></p>
+        <p>Packed BCD: <span id="pBCD"></span></p>
+        <p>Densely Packed BCD: <span id="dBCD"></span></p>
+    </div>
         
        <button type = "submit">Generate</button>      
+        
     </form>
 
     <hr>
@@ -38,7 +32,9 @@
     <form action="">
         <div class = "input">
             <label for="input">Densely Packed BCD Input: </label>
-            <input type="text" placeholder=""><br>
+            <input type="text" placeholder="">
+            <a class ="errMsg 2">Invalid input</a>
+            <br>
         </div>
         <div class = "input">
             <label for="unpacked">Decimal:</label>
@@ -48,6 +44,6 @@
        <button type = "submit">Generate</button>      
         
     </form>
-    
+    <script src="index.js"></script>
 </body>
 </html>

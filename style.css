@@ -2,3 +2,9 @@
 .input{
     padding-bottom: 10px; 
 }
+
+a{
+    margin-left: 5px; 
+    color: red; 
+    display: none;
+}
