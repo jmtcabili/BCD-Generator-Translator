@@ -5,43 +5,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BCD Generator & Translator</title>
     <link rel="stylesheet" href="./style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
 </head>
 
+
 <body>
-    
-    <h2>BCD Generator</h2>
-    
-    <div class = "input">
-        <label for="input">Decimal Input: </label>
-        <input type="number" id="decimalInput">
-        <br>
-    </div>
-    <div class = "output">
-        <p>Unpacked BCD: <span id="uBCD"></span></p>
-        <p>Packed BCD: <span id="pBCD"></span></p>
-        <p>Densely Packed BCD: <span id="dBCD"></span></p>
-    </div>
-        
-    <button onclick="fromDecimal()">Convert</button>      
-
-    <hr>
-    <h2>BCD Translator</h2>
-
-    <form action="">
-        <div class = "input">
-            <label for="input">Densely Packed BCD Input: </label>
-            <input type="text" placeholder="">
-            <a class ="errMsg 2">Invalid input</a>
-            <br>
+    <header>
+        <div class = "header-text grid">
+            <h3>CSARCH2 | Simulation Project</h3>
+            <div class = "help">
+                <svg width="29" height="26" viewBox="0 0 29 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M29 13C29 20.1797 22.5081 26 14.5 26C6.49187 26 0 20.1797 0 13C0 5.8203 6.49187 0 14.5 0C22.5081 0 29 5.8203 29 13ZM2.64537 13C2.64537 18.8699 7.95287 23.6283 14.5 23.6283C21.0471 23.6283 26.3547 18.8699 26.3547 13C26.3547 7.13016 21.0471 2.37171 14.5 2.37171C7.95287 2.37171 2.64537 7.13016 2.64537 13Z" fill="white"/>
+                    <path d="M16.4773 20.091C16.4773 21.07 15.592 21.8637 14.5 21.8637C13.408 21.8637 12.5227 21.07 12.5227 20.091C12.5227 19.1119 13.408 18.3182 14.5 18.3182C15.592 18.3182 16.4773 19.1119 16.4773 20.091Z" fill="white"/>
+                    <path d="M13.1819 13.0001V15.3637C13.1819 15.3637 13.1819 16.5455 14.5001 16.5455C15.8183 16.5455 15.8183 15.3637 15.8183 15.3637V13.0001C15.8183 13.0001 16.45 12.838 16.6921 12.7499C16.6921 12.7499 17.1324 12.609 17.4406 12.3969C17.7489 12.1848 18.0277 11.9329 18.2772 11.6413C18.5414 11.3496 18.7469 11.0116 18.8936 10.6272C19.0403 10.2428 19.1138 9.93182 19.1138 9.4546C19.1138 8.65925 18.9156 7.84349 18.5194 7.24696C18.1378 6.63719 17.5947 6.16662 16.8902 5.83522C16.1858 5.49057 15.3639 5.31824 14.4246 5.31824C13.8376 5.31824 13.3165 5.38451 12.8616 5.51708C12.4066 5.63638 12.0031 5.80207 11.6508 6.01417C11.3132 6.21302 11.027 6.43836 10.7922 6.69022C10.5721 6.92883 10.396 7.16081 10.2639 7.38616C10.1318 7.61151 10.0437 7.81034 9.9997 7.98267C9.91163 8.23453 9.87495 8.44 9.88962 8.59907C9.91897 8.75814 10.007 8.8907 10.1538 8.99674C10.3006 9.10279 10.528 9.21546 10.8362 9.33476C11.1591 9.42756 11.4086 9.4607 11.5847 9.43419C11.7755 9.40767 11.9297 9.32814 12.0471 9.19558C12.0471 9.19558 12.6729 8.39769 12.849 8.23862C13.0398 8.0663 13.2746 7.93374 13.5535 7.84095C13.8323 7.7349 14.1479 7.68187 14.5001 7.68187C15.2633 7.68187 15.8283 7.84758 16.1953 8.17897C16.5768 8.49712 16.6921 8.76476 16.6921 9.37453C16.6921 9.78546 16.6114 10.1169 16.45 10.3687C16.2885 10.6206 16.0757 10.8261 15.8116 10.9852C15.8116 10.9852 15.4528 11.1081 15.1592 11.2273C14.8804 11.3333 14.3684 11.5087 14.1043 11.6413C13.8547 11.7606 13.7149 11.886 13.5535 12.0716C13.3921 12.2572 13.1819 12.6819 13.1819 13.0001Z" fill="white"/>
+                    </svg>
+                <h3>Help</h3>    
+            </div>
+            
         </div>
-        <div class = "input">
-            <label for="unpacked">Decimal:</label>
-            <input type="text" placeholder="" readonly><br>
+    
+    </header>
+    
+    <article class = "grid">
+
+        <div class="generator">
+            <h2>BCD Generator</h2>
+            
+            <div class="container">
+                <div class = "input">
+                    <div class = "label"><b>Input</b></div>
+                    <hr>
+                    <label>Decimal Input: </label>
+                    <input onchange = "fromDecimal()" type="number" id="decimalInput">
+                    <span class="error">Invalid input</span>
+                </div>
+                <div class = "output">
+                    <div class = "label"><b>Output</b></div>
+                    <hr>
+                    <p>Unpacked BCD: <span id="uBCD"></span></p>
+                    <p>Packed BCD: <span id="pBCD"></span></p>
+                    <p>Densely Packed BCD: <span id="dBCD"></span></p>
+                </div>
+                    
+                
+            </div>    
         </div>
         
-       <button type = "submit">Generate</button>      
-        
-    </form>
-    <script src="index.js"></script>
+
+        <div class="translator">
+            <h2>BCD Translator</h2>
+
+            <div class="container">
+                <div class = "input">
+                    <div class = "label"><b>Input</b></div> <hr>
+                    <label for="input">Densely Packed BCD Input: </label>
+                    <input type="number" placeholder="">
+                    <a class ="error">Invalid input</a>
+                    <br>
+                </div>
+                <div class = "output">
+                    <div class="label"><b>Output</b></div><hr>
+                    <p>Decimal: <span id="decimal"></span></p>
+                </div>  
+            </div>
+        </div>
+       
+        <script src="index.js"></script>
+    </article>
+    <footer class = "grid">
+        <div class="footer-content">
+            <u><b>Group Members</b></u>
+            <ol>
+                <li>Johan Marlo Cabili</li>
+                <li>Matthew Adrian Chua</li>
+                <li>Aebrahm Clyde Ramos</li>
+                <li>Grant Spencer Villamor</li>
+            </ol>
+        </div>
+        <div class="footer-content">
+            <span><u><b>Section:</b></u> S11</span>
+            <span><u><b>Group #:</b></u> 26</span>
+            <span><u><b>Submitted on:</b></u> July 2024</span> 
+        </div>
+    </footer>
 </body>
 </html>
