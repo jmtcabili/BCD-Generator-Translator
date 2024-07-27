@@ -61,14 +61,14 @@
             <div class="container">
                 <div class = "input">
                     <div class = "label"><b>Input</b></div> <hr>
-                    <label for="input">Densely Packed BCD Input: </label>
-                    <input type="number" placeholder="">
+                    <label for="input" >Densely Packed BCD Input: </label>
+                    <input onchange="fromBCD()" id = "bcdInput" type="number" placeholder="">
                     <a class ="error">Invalid input</a>
                     <br>
                 </div>
                 <div class = "output">
                     <div class="label"><b>Output</b></div><hr>
-                    <p>Decimal: <span id="decimal"></span></p>
+                    <p>Decimal: <span id="decimalOutput"></span></p>
                 </div>  
             </div>
         </div>
