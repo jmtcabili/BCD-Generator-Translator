@@ -62,13 +62,9 @@ function fromBCD(){
 
      
     //generate default 0-array
-    numBits = numGroups * 12 + numExcess;
-
-    console.log(numGroups);
+    numBits = numGroups * 12 + numExcess; 
 
     let result = new Array(numBits).fill('0')
-    
-    for(let count = 1; count <= numGroups ; count++){
     
         //default values
         result[idx['d']]  = dBCDInput[idx['r']]
@@ -160,58 +156,7 @@ function fromBCD(){
                 }
             }
         }
-
-        //increment the indices of the idx array for the next group
-        idx.a = 0 + (12*count);
-        idx.b = 1 + (12*count);
-        idx.c = 2 + (12*count);
-        idx.d = 3 + (12*count);
-        idx.e = 4 + (12*count);
-        idx.f = 5 + (12*count);
-        idx.g = 6 + (12*count);
-        idx.h = 7 + (12*count);
-        idx.i = 8 + (12*count);
-        idx.j = 9 + (12*count);
-        idx.k = 10 + (12*count);
-        idx.m = 11 + (12*count);
-
-        idx.p = 0 + (10*count);
-        idx.q = 1 + (10*count);
-        idx.r = 2 + (10*count);
-        idx.s = 3 + (10*count);
-        idx.t = 4 + (10*count);
-        idx.u = 5 + (10*count);
-        idx.v = 6 + (10*count);
-        idx.w = 7 + (10*count);
-        idx.x = 8 + (10*count);
-        idx.y = 9 + (10*count);
-
-        console.log("LOOP");
-
-    }
     
     final = result.join(''); 
-
-    const binaryMap = {
-        '0000': '0',
-        '0001': '1',
-        '0010': '2',
-        '0011': '3',
-        '0100': '4',
-        '0101': '5',
-        '0110': '6',
-        '0111': '7',
-        '1000': '8',
-        '1001': '9'
-    };
-    
-    // Split the joined BCD string into chunks of 4 bits and map each chunk to its decimal equivalent
-    const decimalString = final.match(/.{1,4}/g).map(digit => binaryMap[digit]).join('');
-
-    console.log(decimalString);
-    
-    // Convert the decimal string to a number to remove the non significant zeroes
-    const decimalOutputNum = parseInt(decimalString, 10);
-
-    decimalOutput.innerHTML = decimalOutputNum;
+    decimalOutput.innerHTML = final;
 }
