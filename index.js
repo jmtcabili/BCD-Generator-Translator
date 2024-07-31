@@ -11,7 +11,7 @@ function fromDecimal() {
         '8': '1000',
         '9': '1001'
     };
-
+    
     const decimalInput = document.getElementById('decimalInput').value.split('');
     let unpackedOutput = document.getElementById('uBCD');
     let packedOutput = document.getElementById('pBCD');
@@ -57,8 +57,143 @@ function packedBCD(binaryMap, decimalInput) {
     return decimalInput.map(digit => binaryMap[digit]).join(' ');
 }
 
-function denseBCD(){
-    return ""
+function denseBCD(packedResult, decimalInput){
+
+    let densePackedBCD = [];
+    let cleanedResult = packedResult.replace(/\s+/g, '');
+
+    if(document.getElementById('decimalInput').value.length % 3 == 1){ //if there are 2 digits missing in the decimal pad 8 zeroes at the start
+        cleanedResult = cleanedResult.padStart((document.getElementById('decimalInput').value.length + 2) *4, '0')
+    }else if(document.getElementById('decimalInput').value.length % 3 == 2){ //if there is 1 digit missing in the decimal pad 4 zeroes at the start
+        cleanedResult = cleanedResult.padStart((document.getElementById('decimalInput').value.length + 1) *4, 0)
+    }
+
+    const arr = cleanedResult.split('');
+
+    let a = arr[0];
+    let b = arr[1];
+    let c = arr[2];
+    let d = arr[3];
+    let e = arr[4];
+    let f = arr[5];
+    let g = arr[6];
+    let h = arr[7];
+    let i = arr[8];
+    let j = arr[9];
+    let k = arr[10];
+    let m = arr[11];
+
+    //console.log((cleanedResult.length / 4) /3)
+
+    for(let count = 1; count <= (cleanedResult.length / 4) /3 ; count++){
+
+    if (a == 0){ 
+        densePackedBCD.push(b);
+        densePackedBCD.push(c);
+        densePackedBCD.push(d);
+        if (e == 0){
+            densePackedBCD.push(f);
+            densePackedBCD.push(g);
+            densePackedBCD.push(h);
+            if (i == 0){
+                densePackedBCD.push(0);
+                densePackedBCD.push(j);
+                densePackedBCD.push(k);
+                //aei = 000
+            }else{
+                densePackedBCD.push(1);
+                densePackedBCD.push(0);
+                densePackedBCD.push(0);
+                //aei = 001
+            }
+        }else{
+            if (i == 0){
+                densePackedBCD.push(j);
+                densePackedBCD.push(k);
+                densePackedBCD.push(h);
+                densePackedBCD.push(1);
+                densePackedBCD.push(0);
+                densePackedBCD.push(1);
+                //aei = 010
+            }else{
+                densePackedBCD.push(1);
+                densePackedBCD.push(0);
+                densePackedBCD.push(h);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
+                //aei = 011
+            }
+        }
+    }else{
+        if (e == 0){
+            if (i == 0){
+                densePackedBCD.push(j);
+                densePackedBCD.push(k);
+                densePackedBCD.push(d);
+                densePackedBCD.push(f);
+                densePackedBCD.push(g);
+                densePackedBCD.push(h);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
+                densePackedBCD.push(0);
+                //aei = 100
+            }else{
+                densePackedBCD.push(f);
+                densePackedBCD.push(g);
+                densePackedBCD.push(d);
+                densePackedBCD.push(0);
+                densePackedBCD.push(1);
+                densePackedBCD.push(h);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
+                //aei = 101
+            }
+        }else{
+            if (i == 0){
+                densePackedBCD.push(j);
+                densePackedBCD.push(k);
+                densePackedBCD.push(d);
+                densePackedBCD.push(0);
+                densePackedBCD.push(0);
+                densePackedBCD.push(h);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
+                //aei = 110
+            }else{
+                densePackedBCD.push(0);
+                densePackedBCD.push(0);
+                densePackedBCD.push(d);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
+                densePackedBCD.push(h);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
+                densePackedBCD.push(1);
+                //aei = 111
+            }
+        }
+    }
+    densePackedBCD.push(m);
+
+    a = arr[0+ (12 * count)];
+    b = arr[1+ (12 * count)];
+    c = arr[2+ (12 * count)];
+    d = arr[3+ (12 * count)];
+    e = arr[4+ (12 * count)];
+    f = arr[5+ (12 * count)];
+    g = arr[6+ (12 * count)];
+    h = arr[7+ (12 * count)];
+    i = arr[8+ (12 * count)];
+    j = arr[9+ (12 * count)];
+    k = arr[10+ (12 * count)];
+    m = arr[11+ (12 * count)];
+
+
+    }
+    return densePackedBCD.join('');
 }
 
 function fromBCD(){
