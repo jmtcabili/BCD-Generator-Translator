@@ -40,7 +40,7 @@
                     <hr>
                     <label>Decimal Input: </label>
                     <input onchange = "fromDecimal()" type="number" id="decimalInput">
-                    <span class="error">Invalid input</span>
+                    <span class="error" id = "err1">Invalid input</span>
                 </div>
                 <div class = "output">
                     <div class = "label"><b>Output</b></div>
@@ -63,14 +63,22 @@
                     <div class = "label"><b>Input</b></div> <hr>
                     <label for="input" >Densely Packed BCD Input: </label>
                     <input onchange="fromBCD()" id = "bcdInput" type="number" placeholder="">
-                    <a class ="error">Invalid input</a>
+                    <span>
+                        
+                        <a class ="error" id = "err2">Invalid input</a>
+                    </span>
+                    
                     <br>
                 </div>
                 <div class = "output">
-                    <div class="label"><b>Output</b></div><hr>
+                    <div class="label" ><b>Output</b></div><hr>
                     <p>Decimal: <span id="decimalOutput"></span></p>
                 </div>  
             </div>
+        </div>
+
+        <div class="generate-text">
+            <button id ="download" onclick="generateText()">DOWNLOAD TEXT OUTPUT</button>
         </div>
        
         <script src="index.js"></script>
@@ -85,7 +93,7 @@
                 <li>Grant Spencer Villamor</li>
             </ol>
         </div>
-        <div class="footer-content">
+        <div class="footer-content two">
             <span><u><b>Section:</b></u> S11</span>
             <span><u><b>Group #:</b></u> 26</span>
             <span><u><b>Submitted on:</b></u> July 2024</span> 
