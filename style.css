@@ -106,3 +106,7 @@ footer{
 li{
     margin-bottom: 2px; 
 }
+
+.help h3:hover{
+    cursor: pointer;
+}

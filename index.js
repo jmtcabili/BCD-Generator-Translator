@@ -437,3 +437,10 @@ Decimal Equivalent      : ${decimalOutput}
     link.click(); 
 
 }
+
+function redirect() {
+    window.location.href = 'https://github.com/jmtcabili/BCD-Generator-Translator/blob/main/README.md';
+}
+
+document.querySelector('.help h3').addEventListener('click', redirect);
+
