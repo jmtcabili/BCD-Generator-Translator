@@ -35,7 +35,7 @@ function fromDecimal() {
     if (flag){
         let unpackedResult = unpackedBCD(binaryMap, decimalInput);
         let packedResult = packedBCD(binaryMap, decimalInput);
-        let denseResult = denseBCD(binaryMap, decimalInput);
+        let denseResult = denseBCD(packedResult, decimalInput);
         unpackedOutput.innerHTML = unpackedResult;
         packedOutput.innerHTML = packedResult;
         denseOutput.innerHTML = denseResult;
