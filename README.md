@@ -11,9 +11,12 @@ While the packed and unpacked BCD uses the binary map directly, the Densely Pack
 The next function converts it from BCD back to decimal. All these are done using arrays and the manipulation of maps, .split(), and .join().
 
 Instructions for use:
+
 Generate BCD: 
   - input decimal value to be converted to its respective BCD, Packed BCD, and Densely Packed BCD equivalent
   - press enter upon entering input to display corresponding output
+
+
 Translate BCD:
   - input Densely Packed BCD value in multiples of 10 bits.
   - pressing enter will display the translated decimal value of the input
