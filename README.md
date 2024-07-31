@@ -7,3 +7,4 @@ a binary map is used to convert decimal to packed, unpacked BCD, and Densely Pac
 
 While the packed and unpacked BCD uses the binary map directly, the Densely Packed BCD gets the packed BCD and reorganizes depending on what 'a', 'e', and 'i' contain.
 
+The next function converts it from BCD back to decimal. All these are done using arrays and the manipulation of maps, .split(), and .join().
