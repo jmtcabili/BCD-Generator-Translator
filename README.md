@@ -9,7 +9,7 @@ While the packed and unpacked BCD uses the binary map directly, the Densely Pack
 
 The next function converts it from BCD back to decimal. All these are done using arrays and the manipulation of maps, .split(), and .join().
 
-
+The images below show the output upon testing.
 
 
 
