@@ -21,6 +21,10 @@ Translate BCD:
   - input Densely Packed BCD value in multiples of 10 bits.
   - pressing enter will display the translated decimal value of the input
 
+General Instructions: 
+  - all inputs should not contain radix points or any unary sign.
+  - decimal input will accept digits 0-9 while densely packed BCD inputs will accept bit values 0 and 1 only
+
 The images below show the output upon testing.
 
 
